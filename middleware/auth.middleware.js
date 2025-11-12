@@ -35,7 +35,7 @@ export const protectRoute = async (req, res, next) =>{
 }
 
 export const isAdmin = async (req,res,next)=> {
-    if(req.user?.role !== 'admin'){
+    if(req.user?.role !== 'teacher'){
         return res.status(401).json({
             message:" Access Denied...!!"
         })
@@ -44,3 +44,4 @@ export const isAdmin = async (req,res,next)=> {
 
     next();
 }
+
